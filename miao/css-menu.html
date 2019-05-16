@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      margin:0;
+    }
+    ul{
+      list-style-type: none;
+      padding:0;
+      margin:0;
+      position:absolute;
+    }
+    ul li{
+      position:relative;
+      white-space: nowrap;
+      text-align:center;
+      background-color:#212220;
+      color:#cccccc;      
+      padding:0 18px;
+      height:30px;
+      font-size:20px;
+    }
+    .top > li{
+      float:left;
+    }
+    .top > li > ul{
+      top:100%;
+      left:0;
+    }
+    ul li:hover{
+      background-color:#3d3d32;
+      cursor: pointer;
+    }
+    li ul{
+      display:none;
+      left:100%;
+      top:0;
+    }
+    li:hover > ul{
+      display:block;
+      
+    }
+    ul ul ul::before{
+      content: '>';
+      position: absolute;
+      left: -1em;
+    }
+
+
+    
+    ul ul ul{
+      display: block;
+    }
+    ul ul ul li{
+      display: none;
+    }
+    ul ul li:hover > ul li{
+      display: block;
+    }
+   
+  </style>
+</head>
+<body>
+  <ul class="top">
+    <li>File
+      <ul>
+        <li>New File</li>
+        <li>New Window</li>
+        <li>Open File</li>
+        <li>Save</li>
+        <li>Preference
+          <ul>
+            <li>Setting</li>
+            <li>Extensions</li>
+            <li>Color Theme</li>
+          </ul>
+        </li>
+        <li>close Window</li>
+      </ul>
+    </li>
+    <li>Edit
+      <ul>
+        <li>Undo</li>
+        <li>Redo</li>
+        <li>Cut</li>
+        <li>Copy</li>
+        <li>Paste</li>
+      </ul>
+    </li>
+    <li>Section
+      <ul>
+        <li>Select All</li>
+        <li>Expand Selection</li>
+        <li>Copy Line up</li>
+        <li>Move line up</li>
+      </ul>
+    </li>
+    <li>View
+      <ul>
+        <li>Appearance
+          <ul>
+            <li>Zoom in</li>
+            <li>Zoom out</li>
+            <li>Reset Zoom</li>
+          </ul>
+        </li>
+        <li>Editor Layout</li>
+        <li>Search</li>
+      </ul>
+    </li>
+    <li>Go
+      <ul>
+        <li>Back</li>
+        <li>Switch Editor</li>
+        <li>Switch Group</li>
+        <li>Go to File</li>
+        <li>Go to Definition</li>
+      </ul>
+    </li>
+    <li>Debug</li>
+    <li>Terminal</li>
+    <li>Help</li>
+  </ul>
+</body>
+</html>
