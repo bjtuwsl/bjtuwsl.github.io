@@ -7,67 +7,76 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>小米轮播图</title>
   <style>
-    .slide{
-      width:1226px;
-      height:460px;
+    .slide {
+      width: 1226px;
+      height: 460px;
       position: relative;
-      margin:40px auto;
+      margin: 40px auto;
     }
-    .slide img{
+
+    .slide img {
       position: absolute;
-      width:100%;
-      height:100%;
+      width: 100%;
+      height: 100%;
+      left: 0;
       opacity: 0;
       z-index: 1;
     }
-    .slide input:checked + img{
+
+    .slide input:checked+img {
       opacity: 1;
       transition: 1.5s;
     }
-    .slide .indicators{
-      position: absolute;
-      top: 420px;
-      left:1095px;
+
+    .slide input:checked+img+label {
+      background-color: #f3f4fd;
     }
-    .slide .indicators label{
+
+    label:hover {
+      background-color: #f3f4fd;
+    }
+
+    label {
       display: inline-block;
-      width:6px;
-      height:6px;
-      margin:3px;
-      border-radius:10px;
-      border: 2px solid #878787;
-      position:relative;
+      width: 6px;
+      height: 6px;
+      margin: 3px;
+      border-radius: 5px;
+      border: 2px solid #b0b0b7;
+      background-color: #8c8e97;
+      position: relative;
+      top: 420px;
+      left: 1095px;
       cursor: pointer;
       z-index: 99999;
     }
 
-    .slide input{
-      display:none;
+    .slide input {
+      display: none;
     }
   </style>
 </head>
 
 <body>
   <div class="slide">
-    <div class="indicators">
-      <label for="i1"></label>
-      <label for="i2"></label>
-      <label for="i3"></label>
-      <label for="i4"></label>
-      <label for="i5"></label>
-    </div>
     <input checked type="radio" name="mi" id="i1">
     <img src="https://i1.mifile.cn/a4/xmad_15566146318197_mAghl.jpg" alt="">
+    <label for="i1"></label>
     <input type="radio" name="mi" id="i2">
     <img src="https://i1.mifile.cn/a4/xmad_15529884424562_HKYaG.jpg" alt="">
+    <label for="i2"></label>
     <input type="radio" name="mi" id="i3">
     <img src="https://i1.mifile.cn/a4/xmad_15579184778872_ECdvK.jpg" alt="">
+    <label for="i3"></label>
     <input type="radio" name="mi" id="i4">
     <img src="https://i1.mifile.cn/a4/xmad_15548066591437_Stxlj.jpg" alt="">
+    <label for="i4"></label>
     <input type="radio" name="mi" id="i5">
     <img src="https://i1.mifile.cn/a4/xmad_15476942061027_STEvM.jpg" alt="">
+    <label for="i5"></label>
+
   </div>
-  
+
 </body>
 
 </html>

@@ -1,74 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>css-block-layout</title>
   <style>
-    body{
-      margin:0;
+    body {
+      margin: 0;
     }
-    header{
+
+    header {
       background-color: #000;
     }
-    header > p{
-      color:#FFF;
-      width:600px;
-      margin:auto;
+
+    header>p {
+      color: #FFF;
+      width: 600px;
+      margin: auto;
     }
-    main{
-      width:600px;
-      margin:auto;
+
+    main {
+      width: 600px;
+      margin: auto;
     }
-    main > section{
-      margin:0;
-      padding:15px 0 16px 0;
+
+    main>section {
+      margin: 0;
+      padding: 15px 0 16px 0;
     }
-    div{
-      border:3px solid;
-      width:174px;
-      height:34px;
+
+    div {
+      border: 3px solid;
+      width: 174px;
+      height: 34px;
       background-color: #ffc0cb;
-      text-align:center;
-      line-height:34px;
+      text-align: center;
+      line-height: 34px;
     }
-    div:hover{
+
+    div:hover {
       background-color: red;
     }
-    main > div:nth-of-type(3n+1){
-      margin: 0 0 15px 0;   
+
+    main>div:nth-of-type(3n+1) {
+      margin: 0 0 15px 0;
     }
-    main > div:nth-of-type(3n+2){
-      margin: -55px 0 15px 210px;   
+
+    main>div:nth-of-type(3n+2) {
+      margin: -55px 0 15px 210px;
     }
-    main > div:nth-of-type(3n+3){
-      margin: -55px 0 15px 420px;   
+
+    main>div:nth-of-type(3n+3) {
+      margin: -55px 0 15px 420px;
     }
-    main > p{
-      margin:0;
+
+    main>p {
+      margin: 0;
       border-bottom: 1px dotted;
     }
-    main > p:last-of-type{
-      margin:0;
-      border-bottom: 0;
+
+    main>p:last-child {
+      margin: 0;
+      border-bottom: none;
     }
-    footer{
+
+    footer {
       background-color: #EE82EE;
-      margin-top:16px;
+      margin-top: 16px;
     }
-    footer > p{
-      text-align:center;
-      margin:0;
+
+    footer>p {
+      text-align: center;
+      margin: 0;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <p>hello world 请调整浏览器窗口大小查看效果</p> 
+    <p>hello world 请调整浏览器窗口大小查看效果</p>
   </header>
   <main>
-    <section>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</section>
+    <section>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+      页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+      宽度600px 页面主体 宽度600px</section>
     <div>宽180高40(包含边框)</div>
     <div>产品</div>
     <div>产品</div>
@@ -92,4 +109,5 @@
     <p>本页所有布局均使用块元素</p>
   </footer>
 </body>
+
 </html>
