@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 170px;
+      padding-bottom: 5px;
+      display: flow-root;
+      float:left;
+      margin-right:10px;
+    }
+    span {
+      width: 50px;
+      height: 50px;
+      display: block;
+      float: left;
+      border: 5px solid blue;
+      margin-right: -5px;
+      margin-bottom: -5px;
+      position: relative;
+      line-height: 50px;
+      text-align: center;
+    }
+    span:hover {
+      border-color: red;
+      z-index: 1;
+    }
+    ol{
+      width:170px;
+      padding-left:0;
+      padding-bottom:5px;
+      display:flow-root;
+      font-size:0;
+      float:left;
+      margin-right:10px;
+    }
+    ol *{
+      font-size:initial;
+    }
+    li{
+      display: inline;
+    }
+    a{
+      width:50px;
+      height:50px;
+      display:inline-block;
+      border:5px solid blue;
+      text-decoration: none;
+      margin-right:-5px;
+      margin-bottom:-5px;
+      line-height: 50px;
+      text-align:center;
+      position: relative;
+    }
+    a:hover{
+      border-color:red;
+      z-index:1;
+    }
+
+    table{
+      border-collapse: collapse;
+      float: left;
+    }
+    tr{
+      border:5px solid blue;
+    }
+    col{
+      border:5px solid blue;
+    }
+    td{
+      width:50px;
+      height: 50px;
+      line-height:50px;
+      text-align:center;
+      padding:0;
+    }
+    td:hover{
+      border:5px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <span>01</span>
+    <span>02</span>
+    <span>03</span>
+    <span>04</span>
+    <span>05</span>
+    <span>06</span>
+    <span>07</span>
+    <span>08</span>
+    <span>09</span>
+  </div>
+  <ol>
+    <li><a href="">01</a></li>
+    <li><a href="">02</a></li>
+    <li><a href="">03</a></li>
+    <li><a href="">04</a></li>
+    <li><a href="">05</a></li>
+    <li><a href="">06</a></li>
+    <li><a href="">07</a></li>
+    <li><a href="">08</a></li>
+    <li><a href="">09</a></li> 
+  </ol>
+  <table>
+    <col>
+    <col>
+    <col>
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td>05</td>
+        <td>06</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td>08</td>
+        <td>09</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
