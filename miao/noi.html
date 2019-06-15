@@ -411,7 +411,7 @@
 <script id="ch0104/20" type="">
 	var a = +prompt("请输入第一个参数a(a!=0):");
 	var b = +prompt("请输入第二个参数b:");
-	var c = +prompt("请输入第二个参数c:");
+	var c = +prompt("请输入第三个参数c:");
 	var delta = b * b - 4 * a * c;
 	if (a === 0) {
 		console.log("a不可为0");
@@ -422,8 +422,8 @@
 				var x2 = ((-b - Math.sqrt(delta)) / (2 * a)).toFixed(5);
 			} else {
 				a = -a;
-				var x1 = ((-b + Math.sqrt(delta)) / (2 * a)).toFixed(5);
-				var x2 = ((-b - Math.sqrt(delta)) / (2 * a)).toFixed(5);
+				var x2 = ((b - Math.sqrt(delta)) / (2 * a)).toFixed(5);
+				var x1 = ((b + Math.sqrt(delta)) / (2 * a)).toFixed(5);
 			}
 		} else if (delta < 0) {
 			delta = -delta;
@@ -433,8 +433,8 @@
 				var x2 = m + "-" + (Math.sqrt(delta) / (2 * a)).toFixed(5) + "i";
 			} else {
 				a = -a;
-				var x1 = m + "+" + (Math.sqrt(delta) / (2 * a)).toFixed(5) + "i";
 				var x2 = m + "-" + (Math.sqrt(delta) / (2 * a)).toFixed(5) + "i";
+				var x1 = m + "+" + (Math.sqrt(delta) / (2 * a)).toFixed(5) + "i";
 			}
 		} else {
 			var x1 = (-b / (2 * a)).toFixed(5);
@@ -452,4 +452,5 @@
 	var answer = Math.floor(s);
 	console.log(answer);
 </script>
+
 
