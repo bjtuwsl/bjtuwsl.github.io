@@ -212,7 +212,7 @@
 </script>
 
 <script id="ch0104/04" type="">
-	var str = +prompt("请输入一个字符:");
+	var str = prompt("请输入一个字符:");
 	if (str.charCodeAt() % 2 === 0) {
 		console.log("YES");
 	} else {
@@ -305,11 +305,11 @@
 	var w = d / 1.2;
 	var b = d / 3 + 27 + 23;
 	if (w > b) {
-		console.log("Walk");
+		console.log("Bike");
 	} else if (w === b) {
 		console.log("All");
 	} else {
-		console.log("Bike")
+		console.log("Walk");
 	}
 </script>
 
@@ -362,9 +362,9 @@
 	var n2 = +prompt("请输入第一个整数n2:");
 	var n3 = +prompt("请输入第一个整数n3:");
 	if (n1 + n2 > n3 && n1 + n3 > n2 && n2 + n3 > n1) {
-		console.log("YES")
+		console.log("yes");
 	} else {
-		console.log("NO")
+		console.log("no");
 	}
 </script>
 
@@ -440,8 +440,7 @@
 			var x1 = (-b / (2 * a)).toFixed(5);
 			var x2 = (-b / (2 * a)).toFixed(5);
 		}
-		console.log("x1=" + x1);
-		console.log("x2=" + x2);
+		console.log("x1=" + x1 + ";" + "x2=" + x2);
 	}
 </script>
 
