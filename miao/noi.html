@@ -17,7 +17,8 @@
 	var a = +prompt("请输入整数a:");
 	var b = +prompt("请输入整数b:");
 	var c = +prompt("请输入整数c:");
-	var answer = (a + b) / c;
+	var n = (a + b) / c;
+	var answer=Math.floor(n);
 	console.log(answer);
 </script>
 
@@ -25,9 +26,10 @@
 	var a = +prompt("请输入整数a:");
 	var b = +prompt("请输入整数b:");
 	var q = a / b;
-	var r = a % b;
-	console.log(q);
-	console.log(r);
+	var R = a % b;
+	var Q=Math.floor(q);
+	console.log(Q);
+	console.log(R);
 </script>
 
 <script id="ch0103/05" type="">
@@ -96,8 +98,9 @@
 	var x = a % 10;
 	var y = (a - x) / 10 % 10;
 	var z = (a - 10 * y - x) / 100 % 10;
-	var answer = x * 100 + y * 10 + z;
-	console.log(answer);
+	console.log(x);
+	console.log(y);
+	console.log(z);
 </script>
 
 <script id="ch0103/14" type="">
