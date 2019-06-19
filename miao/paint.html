@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+  var x = 400;
+  var y = 20;
+  for (var i = 20; i <= x - 20; i++) {
+    dot(i, y, 'black');
+  }
+
+  y = 40;
+  for (var j = 20; j <= x - 20; j++) {
+    if (j % 2 == 0) {
+      dot(j, y, 'red');
+    }
+  }
+
+  y = 60;
+  for (var j = 20; j <= x - 20; j++) {
+    if ((j + 1) / 2 % 2 == 0 || j / 2 % 2 == 0) {
+      dot(j, y, 'transparent')
+    } else {
+      dot(j, y, 'green');
+    }
+  }
+
+  y = 80;
+  for (var j = 20; j <= x - 20; j++) {
+    if ((j + 1) % 5 == 0 || j % 5 == 0) {
+      dot(j, y, 'transparent')
+    } else {
+      dot(j, y, 'orange');
+    }
+  }
+
+
+  for (var k = 0; ; k++) {
+    y = k;
+    dot(k, y, 'blue');
+    if (y == 300) {
+      break;
+    }
+  }
+
+  for (var k = 0; ; k++) {
+    y = k * 3 / 4;
+    dot(k, y, 'blue');
+    if (y == 300) {
+      break;
+    }
+  }
+
+  for (var m = 50; m <= 110; m++) {
+    for (var n = 50; n <= 110; n++) {
+      if (m == 50 || m == 110) {
+        dot(m, n, 'pink');
+      } else {
+        if (n == 50 || n == 110) {
+          dot(m, n, 'pink');
+        }
+      }
+    }
+  }
+
+  for (var m = 120; m <= 180; m++) {
+    for (var n = 50; n <= 110; n++) {
+      dot(m, n, 'blue');
+    }
+  }
+
+  // rgb色彩空间
+  for (var m = 200; m <= 260; m++) {
+    for (var n = 50; n <= 110; n++) {
+      dot(m, n, "rgb("+ (m - 200) * 255 / 60 + ","+ (n - 50) * 255 / 60 +",255)");
+    }
+  }
+  for (var m = 280; m <= 340; m++) {
+    for (var n = 50; n <= 110; n++) {
+      dot(m, n, "rgb("+ (n - 50) * 255 / 60 + ","+ (m - 280) * 255 / 60 +",255)");
+    }
+  }
+
+  //空心圆
+  for (var x = 0; x < 300; x++) {
+    y = Math.sqrt(900 - (x - 80) * (x - 80)) + 200;
+    dot(x, y, 'black');
+    y = -Math.sqrt(900 - (x - 80) * (x - 80)) + 200;
+    dot(x, y, 'black');
+  }
+
+  //实心圆
+  for (var x = 0; x < 400; x++) {
+    for (var y = 0; y < 300; y++) {
+      if ((y - 200) * (y - 200) + (x - 320) * (x - 320) <= 900) {
+        dot(x, y, 'yellow');
+      }
+    }
+  }
+
+  //sin(x)图像
+  for (var x = 0; x < 400; x++) {
+    y = Math.sin(1 / 6 * x) * 8 + 125;
+    dot(x, y, 'black');
+  }
+
+</script>
+
+</html>
