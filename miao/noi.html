@@ -1197,3 +1197,249 @@
   }
   console.log(sum);
 </script>
+
+<script id="7" type="">
+  var n = +prompt();
+  if(relateSeven(n)){
+    console.log("Yes");
+  }else{
+    console.log("No");
+  }
+  function relateSeven(n){
+    if(n % 7 == 0){
+      return true;
+    }
+    while(n > 0){
+      digit = n % 10;
+      if(digit == 7){
+        return true;
+      }
+      n = (n - digit) / 10;
+    }
+    return false;
+  }
+</script>
+
+<script id="sort">
+  var a = Number(prompt());
+  var b = Number(prompt());
+  var c = Number(prompt());
+  if(a > b){
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+  }
+  if(a > c){
+    a = a ^ c;
+    c = a ^ c;
+    a = a ^ c;
+  }
+  if(b > c){
+    b = b ^ c;
+    c = b ^ c;
+    b = b ^ c;
+  }
+  console.log(a);
+  console.log(b);
+  console.log(c);
+</script>
+
+<script id="narcissistic">
+  var n = Number(prompt());
+  
+</script>
+
+<script id="narcissistics">
+  var n = Number(prompt());
+  
+</script>
+
+<script id="palindrom">
+  var n = Number(prompt());
+  
+</script>
+
+<script id="weekday">
+  var n = Number(prompt());
+  
+</script>
+
+<script id="complete-number">
+  var n = Number(prompt());
+  if(checkPerfectNumber(n)){
+    console.log("YES");
+  }else{
+    console.log("NO");
+  }
+  var checkPerfectNumber = function(num) {
+  var sum = 1;
+  var sqrt_n = Math.sqrt(num);
+  for(var i = 2; i < sqrt_n; i++){
+    if(num % i == 0){
+      sum += i + num / i;
+    }
+  }
+    if(sqrt_n * sqrt_n === num){
+        sum += sqrt_n;
+    }
+  return sum === num;
+};
+</script>
+
+<script id="complete-numbers">
+  var checkPerfectNumber = function(num) {
+  var sum = 1;
+  var sqrt_n = Math.sqrt(num);
+  for(var i = 2; i < sqrt_n; i++){
+    if(num % i == 0){
+      sum += i + num / i;
+    }
+  }
+    if(sqrt_n * sqrt_n === num){
+        sum += sqrt_n;
+    }
+  return sum === num;
+};
+  for(var i = 2; i < 1000; i++){
+    if(checkPerfectNumber(i)){
+      console.log(i);
+    }
+  }
+</script>
+
+
+
+<script id="prime" type="">
+  function prime(n) {
+    if(n < 2){
+      return false;
+    }
+    var sqrt_n = Math.sqrt(n);
+    for(var i = 2 ; i <= sqrt_n ;i++){
+      if(n % i == 0){
+        return false;
+      }
+    }
+    return true;
+  }
+  var n = +prompt();
+  if(prime(n)){
+    console.log("Yes");
+  }else{
+    console.log("No");
+  }
+</script>
+
+<script id="primes" type="">
+  function prime(n) {
+    if(n <= 3){
+      return n > 1;
+    }
+    if(n % 6 != 1 && n % 6 != 5){
+      return false;
+    }
+    var sqrt_n = Math.sqrt(n);
+    for(var i = 5 ; i <= sqrt_n ;i += 6){
+      if(n % i == 0 || n % (i + 2) == 0){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  for(var k = 2; k <= 100; k++){
+    if(prime(k)){
+      console.log(k);
+    }
+  }
+</script>
+
+<script id="itob" type="">
+  function power(m, n){
+    var result = 1;
+    for(var i = 0;i < n; i++){
+      result *= m;
+    }
+    return result;
+  }
+  function width(n){
+    var width = 0;
+    if(n === 0){
+      return 1;
+    }
+    while(n > 0){
+      digit = n % 10;
+      width++;
+      n = (n - digit) / 10;
+    }
+    return width;
+  }
+  function itob(n){
+    switch (n) {
+      case 0: return '0';
+      case 1: return '1';
+      case 2: return '2';
+      case 3: return '3';
+      case 4: return '4';
+      case 5: return '5';
+      case 6: return '6';
+      case 7: return '7';
+      case 8: return '8';
+      case 9: return '9';
+    }
+  }
+  var n = Number(prompt());
+  var char = '';
+  if(n === 0){
+    char = '0';
+  }
+  if(n < 0){
+    char = '-';
+    n = -n;
+  }
+  var wh = width(n);
+  while(n > 0){
+    digit = Math.floor(n / power(10, wh - 1));
+    char += itob(digit);
+    n -= digit * power(10, wh - 1);
+    wh--;
+  }
+  console.log(char);
+</script>
+
+<script id="lcf&lcm" type="">
+  function GCD(m,n) {
+    var ans = 1;
+    var gcd;
+    while(m % 2 == 0 && n % 2 == 0){
+      m /= 2;
+      n /= 2;
+      ans *= 2;
+    }
+    while(m != n){
+      if(m > n){
+        m -= n;
+      }else{
+        n -= m;
+      }
+    }
+    gcd = ans * m;
+    return gcd;
+  }
+  var m = Number(prompt());
+  var n = Number(prompt());
+  console.log(GCD(m,n));
+  console.log(m * n / GCD(m,n));
+</script>
+
+<script id="sqrt" type="">
+  function sqrt(n) {
+    var x = 2;
+    for(var i = 0 ; i < 5; i++){
+      x = x - (x * x - n) / (2 * x);
+    }
+    return x;
+  }
+  var n = Number(prompt());
+  console.log(sqrt(n));
+</script>
