@@ -1265,12 +1265,7 @@
 </script>
 
 <script id="complete-number">
-  var n = Number(prompt());
-  if(checkPerfectNumber(n)){
-    console.log("YES");
-  }else{
-    console.log("NO");
-  }
+  
   var checkPerfectNumber = function(num) {
   var sum = 1;
   var sqrt_n = Math.sqrt(num);
@@ -1284,6 +1279,12 @@
     }
   return sum === num;
 };
+  var n = Number(prompt());
+    if(checkPerfectNumber(n)){
+      console.log("YES");
+    }else{
+      console.log("NO");
+    }
 </script>
 
 <script id="complete-numbers">
@@ -1324,9 +1325,9 @@
   }
   var n = +prompt();
   if(prime(n)){
-    console.log("Yes");
+    console.log("YES");
   }else{
-    console.log("No");
+    console.log("NO");
   }
 </script>
 
@@ -1435,7 +1436,7 @@
 <script id="sqrt" type="">
   function sqrt(n) {
     var x = 2;
-    for(var i = 0 ; i < 5; i++){
+    for(var i = 0 ; i < 20; i++){
       x = x - (x * x - n) / (2 * x);
     }
     return x;
