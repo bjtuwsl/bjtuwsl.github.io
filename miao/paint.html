@@ -130,6 +130,13 @@
     dot(x, y, 'black');
   }
 
+  for (var y = 0; y < 400; y++) {
+    x = Math.sqrt(900 - (y - 200) * (y - 200)) + 80;
+    dot(x, y, 'black');
+    x = -Math.sqrt(900 - (y - 200) * (y - 200)) + 80;
+    dot(x, y, 'black');
+  }
+
   //实心圆
   for (var x = 0; x < 400; x++) {
     for (var y = 0; y < 300; y++) {

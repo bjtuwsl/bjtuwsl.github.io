@@ -21,7 +21,7 @@
       text-align:center;
       background-color:#212220;
       color:#cccccc;      
-      padding:0 18px;
+      padding:0 1em;
       height:30px;
       font-size:20px;
     }
@@ -51,7 +51,9 @@
       left: -1em;
     }
 
-
+    ul ul li{
+      padding: 0 1.5em;
+    }
     
     ul ul ul{
       display: block;
@@ -59,7 +61,7 @@
     ul ul ul li{
       display: none;
     }
-    ul ul li:hover > ul li{
+    ul ul li:hover > ul > li{
       display: block;
     }
    
@@ -77,7 +79,13 @@
           <ul>
             <li>Setting</li>
             <li>Extensions</li>
-            <li>Color Theme</li>
+            <li>Color Theme foobar
+      				<ul>
+      					<li>foo</li>
+      					<li>bar</li>
+      					<li>baz</li>
+      				</ul>
+            </li>
           </ul>
         </li>
         <li>close Window</li>
