@@ -223,6 +223,7 @@ var bjtuwsl = {
         return i;
       }
     }
+    return -1;
   },
   /**
    * 
@@ -313,7 +314,7 @@ var bjtuwsl = {
    * @return {function}
    */
   unary: function (f){
-    return ary(f,1);
+    return this.ary(f,1);
   },
   /**
    * 
@@ -372,7 +373,7 @@ var bjtuwsl = {
       if(args.length >= length){
         return f(...args);
       }else{
-        return curry(f.bind(null, ...args), length - args.length);
+        return this.curry(f.bind(null, ...args), length - args.length);
       }
     }
   },
