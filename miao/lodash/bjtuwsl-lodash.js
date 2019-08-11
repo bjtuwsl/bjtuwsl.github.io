@@ -205,11 +205,11 @@ var bjtuwsl = {
   //   return str;
   // },
   join:function(ary, separator = ","){
-    return ary.reduce((current, item) => current + separator + item, '').slice(0, -1);
+    return ary.reduce((current, item) => current + item + separator, '').slice(0, -1);
   },
 
   last:function(ary){
-    return ary[length - 1];
+    return ary[ary.length - 1];
   },
 
   /**
