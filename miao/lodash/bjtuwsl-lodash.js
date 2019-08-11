@@ -168,10 +168,131 @@ var bjtuwsl = {
 
   /**
    * 
+   * @param  {...any} arys 
+   * @return {array}
+   */
+  intersection: function (...arys){
+    var res = arguments[0].slice();
+    for(var i = 1; i < arguments.length; i++){
+      res = res.filter(item => arguments[i].includes(item));
+    }
+    return res;
+  },
+  // intersection: function (...arys){
+  //   var temp = arguments[0].slice();
+  //   for(var i = 1; i < arguments.length; i++){
+  //     for(var j = 0; j < temp.length; j++){
+  //       var idx = arguments[i].indexOf(temp[j]);
+  //       if(idx === -1){
+  //         temp.splice(j, 1);
+  //         j--;
+  //       }
+  //     }
+  //   }
+  //   return temp;
+  // },
+  /**
+   * 
+   * @param {array} ary 
+   * @param {string} separator 
+   * @return {string}
+   */
+  // join:function(ary, separator = ","){
+  //   var str = '' + ary[0];
+  //   for(var i = i; i < ary.length; i++){
+  //     str = str + separator + ary[i];
+  //   }
+  //   return str;
+  // },
+  join:function(ary, separator = ","){
+    return ary.reduce((current, item) => current + separator + item, '').slice(0, -1);
+  },
+
+  last:function(ary){
+    return ary[length - 1];
+  },
+
+  /**
+   * 
+   * @param {array} ary 
+   * @return {number}
+   */
+  lastIndexOf:function(ary, val, fromIndex = ary.length - 1){
+    for(var i = fromIndex; i > 0; i--){
+      if(ary[i] == val){
+        return i;
+      }
+    }
+  },
+  /**
+   * 
+   * @param {array} ary 
+   * @param  {...args} args
+   * @return {array} 
+   */
+  // pull:function(ary, ...args){
+  //   var res = []
+  //   for(var i = 0; i < ary.length; i++){
+  //     if(!args.includes(ary[i])){
+  //       res.push(ary[i]);
+  //     }
+  //   }
+  //   return res;
+  // },
+  pull:function(ary, ...args){
+    return ary.filter(item => !args.includes(item));
+  },
+
+  // reverse:function(ary){
+  //   for(var i = 0; i < ary.length / 2; i++){
+  //     var temp = ary[i];
+  //     ary[i] = ary[ary.length - i - 1];
+  //     ary[ary.length - i - 1] = temp;
+  //   }
+  //   return ary;
+  // },
+  reverse:function(ary){
+    var res = [];
+    ary.forEach(element => {
+      res.unshift(element);
+    });
+    return res;
+  },
+
+  sortedIndex:function(ary,val){
+    for(var i = 0; i < ary.length; i++){
+      if(val <= ary[i]){
+        return i;
+      }
+    }
+  },
+  /**
+   * 
+   * @param {array} ary 
+   * @param {number} val
+   * @return {number} 
+   */
+  sortedIndex:function(ary, val){
+    var start = 0;
+    var end = ary.length - 1;
+    var mid = Math.floor((start + end) / 2);
+    while(start <= end){
+      if(val > ary[mid]){
+        start = mid + 1;
+      }
+      if(val <= ary[mid]){
+        end = mid - 1;
+      }
+      mid = Math.floor((start + end) / 2);
+    }
+    return mid + 1;
+  },
+  /**
+   * 
    * @param {array} arr 
    */
   isArray:function (arr){
-    return Array.prototype.toString.call(arr) == "[object Array]"
+    return Object.prototype.toString.call(arr) == "[object Array]"
   },
 
   /**
@@ -214,6 +335,46 @@ var bjtuwsl = {
       return f(...arg.reverse())
     }
   },
-
+  /**
+   * 
+   * @param {function} f
+   * @return {function} 
+   */
+  // memoize:function (f){
+  //   var cache = {};
+  //   return function(arg){
+  //     if(arg in cache){
+  //       return cache[arg];
+  //     }else{
+  //       return cache[arg] = f(arg);
+  //     }
+  //   }
+  // },
+  memoize: function (f){
+    var cache = new Map();
+    return function memorized (arg){
+      if(cache.has(arg)){
+        return cache.get(arg);
+      }else{
+        cache.set(arg,f(arg));
+        return cache.get(arg);
+      }
+    }
+  },
+  /**
+   * 
+   * @param {function} f 
+   * @param {*} length 
+   * @return {function}
+   */
+  curry: function (f, length = f.length){
+    return function (...args){
+      if(args.length >= length){
+        return f(...args);
+      }else{
+        return curry(f.bind(null, ...args), length - args.length);
+      }
+    }
+  },
 }
 
