@@ -373,9 +373,9 @@ var bjtuwsl = {
       if(args.length >= length){
         return f(...args);
       }else{
-        return this.curry(f.bind(null, ...args), length - args.length);
+        return bjtuwsl.curry(f.bind(null, ...args), length - args.length);
       }
     }
-  },
+  }
 }
 
