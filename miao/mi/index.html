@@ -4187,6 +4187,27 @@
     </div>
     <!-- 右侧固定定位结束 -->
   </div>
+  <script>
+    var btns = document.querySelector(".slideshow .slide-bottom").children;
+    var listener = document.querySelector(".slideshow");
+    var inputs = document.querySelectorAll(".slideshow input");
+    var index = 0;
+    listener.addEventListener("click", function(e){
+      for(var i = 0; i < inputs.length; i++){
+        if(inputs[i].checked){
+          index = i;
+          break;
+        }
+      }
+    })
+    var clock = setInterval(function(){
+      index++;
+      console.log(index)
+      btns[index % 5].click();
+    }, 4000);
+
+
+  </script>
 </body>
 
 </html>
